@@ -11,7 +11,13 @@ const app = express();
 connectDB();
 
 // Enable CORS with default options
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+    origin: '*', // Allow any IP to access
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow all request methods
+    allowedHeaders: ['Content-Type', 'Authorization'] // Allow necessary headers
+}));
+
 
 app.use(express.json());
 
