@@ -13,9 +13,10 @@ connectDB();
 // Enable CORS with default options
 // app.use(cors());
 app.use(cors({
-    origin: '*', // Allow any IP to access
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow all request methods
-    allowedHeaders: ['Content-Type', 'Authorization'] // Allow necessary headers
+    origin: '*', // Allow access from any domain/IP
+    methods: '*', // Allow all HTTP methods (GET, POST, PUT, DELETE, etc.)
+    allowedHeaders: '*', // Allow all headers
+    exposedHeaders: '*' // Allow all headers to be exposed
 }));
 
 
